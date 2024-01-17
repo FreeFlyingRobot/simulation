@@ -1,0 +1,3 @@
+### Scripts deps
+colorama==0.4.3
+click==8.1.2
