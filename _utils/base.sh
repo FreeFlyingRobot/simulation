@@ -64,9 +64,3 @@ error () {
 information () {
     cecho -c 'blue' "$@";
 }
-
-information "Sourced base script\n"
-
-env_file="${PROJECT_ROOT}/.env"
-test -f ${env_file} && source ${env_file}
-return 0

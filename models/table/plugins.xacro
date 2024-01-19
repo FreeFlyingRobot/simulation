@@ -1,0 +1,23 @@
+<include xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<plugin
+    filename="gz-sim-physics-system"
+    name="gz::sim::systems::Physics">
+</plugin>
+
+<plugin
+    filename="gz-sim-user-commands-system"
+    name="gz::sim::systems::UserCommands">
+</plugin>
+
+<plugin
+    filename="gz-sim-scene-broadcaster-system"
+    name="gz::sim::systems::SceneBroadcaster">
+</plugin>
+
+<physics name="1ms" type="ignored">
+    <max_step_size>0.001</max_step_size>
+    <real_time_factor>1.0</real_time_factor>
+</physics>
+
+</include>
