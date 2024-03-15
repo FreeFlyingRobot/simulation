@@ -5,13 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /RobotModel1
-        - /RobotModel1/Description Topic1
-        - /RobotModel1/Links1
-        - /RobotModel1/Links1/base_link1
-        - /TF1
-        - /TF1/Frames1
-        - /TF1/Frames1/base_link1
       Splitter Ratio: 0.5
     Tree Height: 467
   - Class: rviz_common/Views
@@ -80,21 +73,24 @@ Visualization Manager:
           Value: true
         camera:
           Value: true
+        world:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
-      Show Names: true
+      Show Names: false
       Tree:
-        camera:
-          base_link:
-            {}
+        world:
+          camera:
+            base_link:
+              {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: camera
+    Fixed Frame: world
     Frame Rate: 30
   Name: root
   Tools:
@@ -106,25 +102,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 3.3557145595550537
+      Distance: 2.4513931274414062
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.13546638190746307
-        Y: -0.020149128511548042
-        Z: -0.4840226173400879
+        X: 0
+        Y: 0
+        Z: 0
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4649997353553772
+      Pitch: 0.3949999511241913
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.065002918243408
+      Yaw: 5.695001602172852
     Saved: ~
 Window Geometry:
   Displays:

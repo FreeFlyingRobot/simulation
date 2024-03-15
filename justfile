@@ -10,3 +10,6 @@ gazebo WORLD="models/airstand/airstand.sdf":
 clear_build:
     rm -rf "${EXTERNAL_DIR}/build" "${EXTERNAL_DIR}/log" "${EXTERNAL_DIR}/install"
     rm -rf "${PROJECT_ROOT}/build" "${PROJECT_ROOT}/log" "${PROJECT_ROOT}/install"
+
+rviz:
+    ros2 launch urdf_tutorial display.launch.py model:=$(pwd)/models/airstand/platform/platform.urdf
