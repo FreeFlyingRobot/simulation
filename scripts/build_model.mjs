@@ -5,8 +5,16 @@ if (argv._.length == 0) {
     process.exit(1);
 }
 
-argv._.forEach((model_name) => {
+function process_xacro_file(filename) {
+    const realname = filename.slice(0, -6);
+    $`xacro ${filename} > ${realname}`;
+}
+
+
+argv._.forEach(async (model_name) => {
     console.log(`Processing ${chalk.blue(model_name)}`);
-    let model_dir = `${process.env.MODELS_DIR}/${model_name}`;
-    $`xacro ${model_dir}/${model_name}.xacro > ${model_dir}/${model_name}.sdf`;
+    const model_dir = `${process.env.MODELS_DIR}/${model_name}`;
+
+    const targets = (await $`find ${model_dir} -name "*.xacro"`.quiet()).stdout.slice(0, -1).split('\n');
+    targets.forEach(process_xacro_file);
 });

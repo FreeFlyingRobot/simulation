@@ -8,8 +8,7 @@ export PROJECT_ROOT=${toplevel_dir}
 export PROJECT_UTILS_ROOT=${PROJECT_ROOT}/_utils
 export PROJECT_SCRIPTS_ROOT=${PROJECT_ROOT}/scripts
 
-export PATH=${PROJECT_SCRIPTS_ROOT}:${PROJECT_UTILS_ROOT}:$PATH
-export PYTHONPATH=${PROJECT_UTILS_ROOT}:$PYTHONPATH
+export PATH=${PROJECT_SCRIPTS_ROOT}:$PATH
 
 source ${PROJECT_UTILS_ROOT}/base.sh
 information "Sourced base script"
@@ -21,23 +20,22 @@ test -f ${env_file} && source ${env_file} && information "Sourced ${env_file}"
 export EXTERNAL_DIR=${PROJECT_ROOT}/external
 export MODELS_DIR=${PROJECT_ROOT}/models
 
+# Setup python
+export PYTHONPATH=${PROJECT_UTILS_ROOT}:$PYTHONPATH
+
+# Setup ROS
+install_setup="${PROJECT_ROOT}/install/setup.bash"
+test -f ${install_setup} && source ${install_setup} && information "Sourced install/setup.bash"
+
+# Setup Gazebo
+export SDF_PATH=${SDF_PATH}:${MODELS_DIR}
+export DISPLAY=:0
+
+# Entire script should be location independent, so push/pop dir to run any top-level commands
 pushd . > /dev/null
 cd $PROJECT_ROOT
 # Any commands relative to top dir go here
 popd > /dev/null
 
-# Usefull functions
-
-function clear_build() {
-    rm -rf "${EXTERNAL_DIR}/drivers/build" "${EXTERNAL_DIR}/drivers/devel" "${EXTERNAL_DIR}/drivers/install"
-    rm -rf "${PROJECT_ROOT}/build" "${PROJECT_ROOT}/log" "${PROJECT_ROOT}/install"
-}
-
-install_setup="${PROJECT_ROOT}/install/setup.bash"
-test -f ${install_setup} && source ${install_setup} && information "Sources install/setup.bash"
-
-# Gazebo settings
-export DISPLAY=:0
-
-cecho -c 'green' "Done"
+success "Done"
 return 0

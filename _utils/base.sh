@@ -64,3 +64,7 @@ error () {
 information () {
     cecho -c 'blue' "$@";
 }
+
+success () {
+    cecho -c 'green' "$@";
+}
