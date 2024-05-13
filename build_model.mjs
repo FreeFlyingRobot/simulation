@@ -7,6 +7,9 @@ if (argv._.length == 0) {
 
 function process_xacro_file(filename) {
     const realname = filename.slice(0, -6);
+    if (!realname.includes('.')) {
+        return;
+    }
     $`xacro ${filename} > ${realname}`;
 }
 

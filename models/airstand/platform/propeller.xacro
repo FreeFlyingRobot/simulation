@@ -1,0 +1,48 @@
+<include xmlns:xacro="http://www.ros.org/wiki/xacro">
+<xacro:macro name="propeller" params="name side">
+
+<link name="${name}">
+    <pose relative_to='base'>0 ${side * 0.17} ${-base_height/2 + 0.165} 0 0 0</pose>
+    <inertial>
+        <mass>0.1</mass>
+        <inertia>
+            <ixx>0.334</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.334</iyy>
+            <iyz>0</iyz>
+            <izz>0.0017</izz>
+        </inertia>
+    </inertial>
+    <visual name="prop_${name}_vis">
+        <geometry><box>
+            <size>0.01 0.1 0.1</size>
+        </box></geometry>
+        <material>
+            <diffuse>1 0 0</diffuse>
+        </material>
+    </visual>
+</link>
+
+<joint name="${name}_joint" type="revolute">
+    <parent>base</parent>
+    <child>${name}</child>
+    <axis>
+        <xyz>1 0 0</xyz>
+    </axis>
+</joint>
+
+<plugin
+  filename="gz-sim-thruster-system"
+  name="gz::sim::systems::Thruster">
+  <joint_name>${name}_joint</joint_name>
+  <thrust_coefficient>1</thrust_coefficient>
+  <fluid_density>1.225</fluid_density>
+  <propeller_diameter>0.2</propeller_diameter>
+  <p_gain>0</p_gain>
+  <d_gain>0</d_gain>
+  <i_gain>0</i_gain>
+</plugin>
+
+</xacro:macro>
+</include>
