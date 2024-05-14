@@ -31,8 +31,9 @@ def generate_launch_description():
     ld = LaunchDescription()
 
     SIM_DIR = os.environ["SIM_DIR"]
+    MODELS_DIR = os.environ["MODELS_DIR"]
     default_model_path = (
-        Path(SIM_DIR) / "models" / "airstand" / "platform" / "platform.urdf"
+        Path(MODELS_DIR) / "airstand" / "platform" / "platform.sdf"
     )
     default_rviz_config_path = Path(SIM_DIR) / "rviz" / "stand.rviz"
 
