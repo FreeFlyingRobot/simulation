@@ -1,0 +1,39 @@
+<include xmlns:xacro="http://www.ros.org/wiki/xacro">
+<xacro:macro name="glass_plate" params="z w l thickness">
+<link name="glass">
+
+    <pose>0 0 ${z} 0 0 0</pose>
+    <collision name="glass_collision">
+        <geometry>
+            <box>
+                <size>${l} ${w} ${thickness}</size>
+            </box>
+        </geometry>
+        <surface>
+            <friction>
+            <ode>
+                <mu>0.0005</mu>
+                <mu2>0.0005</mu2>
+            </ode>
+            </friction>
+        </surface>
+    </collision>
+
+    <visual name="glass_visual">
+        <geometry>
+            <box>
+                <size>${l} ${w} ${thickness}</size>
+            </box>
+        </geometry>
+        <material>
+            <diffuse>0.5 0.5 0.5</diffuse>
+            <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+            </script>
+        </material>
+    </visual>
+
+</link>
+</xacro:macro>
+</include>

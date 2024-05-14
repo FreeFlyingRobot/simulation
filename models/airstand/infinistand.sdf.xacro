@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<sdf xmlns:xacro="http://www.ros.org/wiki/xacro" version="1.10">
+    <world name="airstand_world">
+        <xacro:include filename="./plugins.xacro" />
+        <xacro:include filename="$(env MODELS_DIR)/common/simple_light.xacro" />
+        <xacro:include filename="$(env MODELS_DIR)/common/gui.xacro" />
+        <xacro:include filename="$(env MODELS_DIR)/common/utils.xacro" />
+
+        <xacro:include filename="./glass.xacro" />
+
+        <model name="Glass">
+        <static>true</static>
+        <xacro:glass_plate z="-0.01" w="100" l="100" thickness="0.02"/>
+        </model>
+
+        <include>
+            <uri>airstand/platform</uri>
+            <pose>0 0 ${base_height / 2} 0 0 0</pose>
+        </include>
+    </world>
+</sdf>
