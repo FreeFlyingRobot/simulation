@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot name="platform" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(env MODELS_DIR)/common/utils.xacro" />
+<xacro:include filename="propeller.xacro" />
+
+<link name="base">
+    <visual name="base_visual">
+        <origin  xyz="0 0 ${0.05 - base_height/2}"/>
+        <geometry>
+            <mesh
+                scale="0.01 0.01 0.01"
+                filename="file:///$(env MODELS_DIR)/airstand/platform/platform.stl"
+            />
+        </geometry>
+        <material name="blue">
+            <color rgba="0 0 0.7 1.0"/>
+        </material>
+    </visual>
+
+    <collision name="base_collision">
+        <geometry>
+            <cylinder length="${base_height}" radius="${base_radius}" />
+        </geometry>
+    </collision>
+
+    <inertial>
+        <mass value="3.3" />
+        <inertia ixx="0.334" ixy="0" ixz="0" iyy="0.334" iyz="0" izz="0.0017"/>
+    </inertial>
+</link>
+
+<gazebo>
+    <plugin
+        filename="gz-sim-joint-state-publisher-system"
+        name="gz::sim::systems::JointStatePublisher">
+        <topic>joint_states</topic> <!--from <ros><remapping> -->
+        <joint_name>prop_left_joint</joint_name>
+        <joint_name>prop_right_joint</joint_name>
+  </plugin>
+</gazebo>
+
+<xacro:propeller name="prop_left" side="1"/>
+<xacro:propeller name="prop_right" side="-1"/>
+
+</robot>

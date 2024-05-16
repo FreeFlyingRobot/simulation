@@ -16,7 +16,7 @@ setup(
     data_files=[
         ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
         (package_share, ["package.xml"]),
-        (package_share + '/launch', glob('launch/*.launch.py')),
+        (package_share + '/launch', glob('launch/*.py')),
     ],
     install_requires=["setuptools"],
     zip_safe=True,

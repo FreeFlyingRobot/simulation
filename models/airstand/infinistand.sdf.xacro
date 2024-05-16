@@ -12,10 +12,5 @@
         <static>true</static>
         <xacro:glass_plate z="-0.01" w="100" l="100" thickness="0.02"/>
         </model>
-
-        <include>
-            <uri>airstand/platform</uri>
-            <pose>0 0 ${base_height / 2} 0 0 0</pose>
-        </include>
     </world>
 </sdf>
