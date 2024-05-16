@@ -35,10 +35,10 @@
         filename="gz-sim-thruster-system"
         name="gz::sim::systems::Thruster">
         <joint_name>${name}_joint</joint_name>
-        <use_angvel_cmd>true</use_angvel_cmd>
         <thrust_coefficient>0.001</thrust_coefficient>
         <fluid_density>1.225</fluid_density>
         <propeller_diameter>0.2</propeller_diameter>
+        <use_angvel_cmd>false</use_angvel_cmd>
         <velocity_control>false</velocity_control>
         <p_gain>0</p_gain>
         <d_gain>0</d_gain>
