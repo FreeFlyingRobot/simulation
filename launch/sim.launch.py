@@ -8,7 +8,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-from simvis.common import SIM_DIR, MODELS_DIR
+from simvis.common import SIM_DIR, MODELS_DIR, RVIZ_CONFIG_PARAM_NAME
 
 
 def generate_launch_description():
@@ -41,6 +41,7 @@ def generate_launch_description():
     ld.add_action(DeclareLaunchArgument('rviz', default_value='true', description='Open RViz'))
     ld.add_action(IncludeLaunchDescription(
         PythonLaunchDescriptionSource(str(pkg_simvis / 'launch' / 'simple_rviz.launch.py')),
+        launch_arguments={RVIZ_CONFIG_PARAM_NAME: str(SIM_DIR / "config" / "gazebo.rviz")}.items(),
         condition=IfCondition(LaunchConfiguration('rviz'))
     ))
 

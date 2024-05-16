@@ -23,12 +23,19 @@
             <cylinder length="${base_height}" radius="${base_radius}" />
         </geometry>
     </collision>
+</link>
 
+<link name="base_weight">
     <inertial>
         <mass value="3.3" />
         <inertia ixx="0.334" ixy="0" ixz="0" iyy="0.334" iyz="0" izz="0.0017"/>
     </inertial>
 </link>
+
+<joint name="base_weight_joint" type="fixed">
+    <parent link="base"/>
+    <child link="base_weight"/>
+</joint>
 
 <gazebo>
     <plugin

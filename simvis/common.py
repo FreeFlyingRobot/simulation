@@ -10,6 +10,7 @@ MODEL_PARAM_NAME = "model"
 SIM_DIR = Path(os.environ["SIM_DIR"])
 MODELS_DIR = Path(os.environ["MODELS_DIR"])
 PLATFORM_MODEL_PATH = MODELS_DIR / "airstand" / "platform" / "platform.urdf"
+RVIZ_CONFIG_PARAM_NAME = "rviz_config"
 
 
 def get_robot_state_publisher_generator(kwargs=None):

@@ -4,7 +4,7 @@ from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-from simvis.common import SIM_DIR
+from simvis.common import SIM_DIR, RVIZ_CONFIG_PARAM_NAME
 
 
 def generate_launch_description():
@@ -13,7 +13,6 @@ def generate_launch_description():
     default_rviz_config_path = SIM_DIR / "config" / "stand.rviz"
 
     GUI_PARAM_NAME = "jsp_gui"
-    RVIZ_CONFIG_PARAM_NAME = "rviz_config"
 
     ld.add_action(
         DeclareLaunchArgument(
