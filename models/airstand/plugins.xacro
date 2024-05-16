@@ -20,4 +20,8 @@
     <real_time_factor>1.0</real_time_factor>
 </physics>
 
+<plugin filename="gz-sim-imu-system"
+        name="gz::sim::systems::Imu">
+</plugin>
+
 </include>
