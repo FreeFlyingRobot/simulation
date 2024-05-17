@@ -6,6 +6,8 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 MODEL_PARAM_NAME = "model"
+WORLD_PARAM_NAME = "world"
+PLATFORM_Z_PARAM_NAME = "platform_z"
 
 SIM_DIR = Path(os.environ["SIM_DIR"])
 MODELS_DIR = Path(os.environ["MODELS_DIR"])

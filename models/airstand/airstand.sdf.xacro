@@ -10,9 +10,5 @@
             <uri>airstand/table</uri>
             <pose>0 0 0 0 0 0</pose>
         </include>
-        <include>
-            <uri>airstand/platform</uri>
-            <pose>0 0 1.323 0 0 0</pose>
-        </include>
     </world>
 </sdf>
