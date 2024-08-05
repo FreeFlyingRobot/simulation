@@ -8,7 +8,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-from simvis.common import SIM_DIR, MODELS_DIR, RVIZ_CONFIG_PARAM_NAME, WORLD_PARAM_NAME, PLATFORM_Z_PARAM_NAME
+from simvis.common import SIM_DIR, MODELS_DIR, RVIZ_CONFIG_PARAM_NAME, WORLD_PARAM_NAME, ROBOT_Z_PARAM_NAME, ROBOT_NAME_PARAM_NAME
 
 
 pkg_simvis = Path(get_package_share_directory('simvis'))
@@ -27,13 +27,15 @@ def generate_gz_sim(context: LaunchContext, world_path: LaunchConfiguration):
     )]
 
 
-def generate_spawner(context: LaunchContext, z: LaunchConfiguration):
+def generate_spawner(context: LaunchContext, z: LaunchConfiguration, robot_model: LaunchConfiguration):
     z_str = context.perform_substitution(z)
+    robot_model_str = context.perform_substitution(robot_model)
+
     return [ExecuteProcess(
         cmd=[
             'gz', 'service', '-s', '/world/airstand_world/create', '--reqtype', 'gz.msgs.EntityFactory', '--reptype',
             'gz.msgs.Boolean', '--timeout', '1000', '--req',
-            f"""'sdf_filename: "{str(MODELS_DIR / 'airstand'/ 'platform' / 'platform.urdf')}", name: "platform", pose: {{position: {{z: {z_str}}}}}'"""
+            f"""'sdf_filename: "{robot_model_str}", name: "robot", pose: {{position: {{z: {z_str}}}}}'"""
         ],
         shell=True,
         output='screen'
@@ -55,13 +57,21 @@ def generate_launch_description():
     ))
 
     ld.add_action(DeclareLaunchArgument(
-        PLATFORM_Z_PARAM_NAME,
+        ROBOT_Z_PARAM_NAME,
         default_value='0.295',
-        description="Platform spawn height"
+        description="Robot spawn height"
+    ))
+    ld.add_action(DeclareLaunchArgument(
+        ROBOT_NAME_PARAM_NAME,
+        default_value=str(MODELS_DIR / 'airstand'/ 'platform' / 'platform.urdf'),
+        description="Robot model path"
     ))
     ld.add_action(OpaqueFunction(
         function=generate_spawner,
-        args=[LaunchConfiguration(PLATFORM_Z_PARAM_NAME)],
+        args=[
+            LaunchConfiguration(ROBOT_Z_PARAM_NAME),
+            LaunchConfiguration(ROBOT_NAME_PARAM_NAME)
+        ],
     ))
 
     # Rviz

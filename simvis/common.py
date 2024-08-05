@@ -7,7 +7,8 @@ from launch_ros.actions import Node
 
 MODEL_PARAM_NAME = "model"
 WORLD_PARAM_NAME = "world"
-PLATFORM_Z_PARAM_NAME = "platform_z"
+ROBOT_Z_PARAM_NAME = "robot_z"
+ROBOT_NAME_PARAM_NAME = "robot"
 
 SIM_DIR = Path(os.environ["SIM_DIR"])
 MODELS_DIR = Path(os.environ["MODELS_DIR"])

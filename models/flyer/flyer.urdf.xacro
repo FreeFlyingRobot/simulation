@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot name="platform" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(env MODELS_DIR)/common/utils.xacro" />
+<xacro:include filename="propeller.xacro" />
+
+<link name="base">
+    <visual name="base_visual">
+        <origin  xyz="0 ${-robot_side_len/2} 0"/>
+        <geometry>
+            <mesh
+                filename="file:///$(env MODELS_DIR)/flyer/Astro_m.stl"
+            />
+        </geometry>
+        <material name="blue">
+            <color rgba="0 0 0.7 1.0"/>
+        </material>
+    </visual>
+
+    <collision name="base_collision">
+        <origin  xyz="0 0 0"/>
+        <geometry>
+            <box size="${robot_side_len} ${robot_side_len} ${robot_side_len}" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="base_weight">
+    <inertial>
+        <mass value="${robot_mass}" />
+        <inertia ixx="${robot_mass/6}" ixy="0" ixz="0" iyy="${robot_mass/6}" iyz="0" izz="${robot_mass/6}"/>
+    </inertial>
+</link>
+
+<joint name="base_weight_joint" type="fixed">
+    <parent link="base"/>
+    <child link="base_weight"/>
+</joint>
+
+</robot>
