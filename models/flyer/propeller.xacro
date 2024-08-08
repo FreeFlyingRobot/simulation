@@ -1,11 +1,5 @@
 <include xmlns:xacro="http://www.ros.org/wiki/xacro">
-<xacro:macro name="propeller" params="name side">
-<xacro:if value="${side == 1}">
-    <xacro:property name="motor_number" value="0" />
-</xacro:if>
-<xacro:if value="${side != 1}">
-    <xacro:property name="motor_number" value="1" />
-</xacro:if>
+<xacro:macro name="propeller" params="name xyz rpy">
 
 <link name="${name}">
     <inertial>
@@ -16,14 +10,14 @@
         <geometry>
             <box size="0.01 0.1 0.1"/>
         </geometry>
-        <material name="red">
-            <color rgba="1.0 0 0 1.0"/>
+        <material name="green">
+            <color rgba="0 1.0 0 1.0"/>
         </material>
     </visual>
 </link>
 
 <joint name="${name}_joint" type="revolute">
-    <origin xyz="0 ${side * 0.17} ${-base_height/2 + 0.165}"/>
+    <origin xyz="${xyz}" rpy="${rpy}"/>
     <parent link="base"/>
     <child link="${name}"/>
     <axis xyz="1 0 0"/>

@@ -5,7 +5,6 @@ from launch import LaunchContext
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-MODEL_PARAM_NAME = "model"
 WORLD_PARAM_NAME = "world"
 ROBOT_Z_PARAM_NAME = "robot_z"
 ROBOT_NAME_PARAM_NAME = "robot"
@@ -13,6 +12,7 @@ ROBOT_NAME_PARAM_NAME = "robot"
 SIM_DIR = Path(os.environ["SIM_DIR"])
 MODELS_DIR = Path(os.environ["MODELS_DIR"])
 PLATFORM_MODEL_PATH = MODELS_DIR / "airstand" / "platform" / "platform.urdf"
+ROBOT_MODEL_PATH = MODELS_DIR / "flyer" / "flyer.urdf"
 RVIZ_CONFIG_PARAM_NAME = "rviz_config"
 
 
