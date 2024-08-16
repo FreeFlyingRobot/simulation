@@ -11,7 +11,7 @@ ROBOT_NAME_PARAM_NAME = "robot"
 
 SIM_DIR = Path(os.environ["SIM_DIR"])
 MODELS_DIR = Path(os.environ["MODELS_DIR"])
-PLATFORM_MODEL_PATH = MODELS_DIR / "airstand" / "platform" / "platform.urdf"
+PLATFORM_MODEL_PATH = MODELS_DIR / "platform" / "full_platform.urdf"
 ROBOT_MODEL_PATH = MODELS_DIR / "flyer" / "flyer.urdf"
 RVIZ_CONFIG_PARAM_NAME = "rviz_config"
 

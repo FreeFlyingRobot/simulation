@@ -1,6 +1,6 @@
 <include xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-<xacro:property name="base_height" value="0.59" />
+<xacro:property name="base_height" value="0.655" />
 <xacro:property name="base_radius" value="0.15" />
 <xacro:property name="robot_side_len" value="0.2" />
 <xacro:property name="robot_mass" value="2" />

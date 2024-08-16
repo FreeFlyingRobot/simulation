@@ -9,8 +9,8 @@
         <xacro:include filename="./glass.xacro" />
 
         <model name="Glass">
-        <static>true</static>
-        <xacro:glass_plate z="-0.01" w="100" l="100" thickness="0.02"/>
+            <static>true</static>
+            <xacro:glass_plate z="-0.01" w="100" l="100" thickness="0.02"/>
         </model>
     </world>
 </sdf>

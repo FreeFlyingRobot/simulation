@@ -8,7 +8,7 @@
     </inertial>
     <visual name="prop_${name}_vis">
         <geometry>
-            <box size="0.01 0.1 0.1"/>
+            <box size="0.01 0.05 0.05"/>
         </geometry>
         <material name="green">
             <color rgba="0 1.0 0 1.0"/>
@@ -29,7 +29,7 @@
         filename="gz-sim-thruster-system"
         name="gz::sim::systems::Thruster">
         <joint_name>${name}_joint</joint_name>
-        <thrust_coefficient>0.001</thrust_coefficient>
+        <thrust_coefficient>1.0</thrust_coefficient>
         <fluid_density>1.225</fluid_density>
         <propeller_diameter>0.2</propeller_diameter>
         <use_angvel_cmd>false</use_angvel_cmd>
