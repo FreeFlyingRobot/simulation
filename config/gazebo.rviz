@@ -4,13 +4,9 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /Global Options1
-        - /Status1
-        - /TF1
-        - /TF1/Frames1
         - /RobotModel1/Description Topic1
-        - /Image1
-        - /Image1/Topic1
+        - /Odometry1
+        - /Odometry1/Shape1
       Splitter Ratio: 0.3719008266925812
     Tree Height: 319
   - Class: rviz_common/Selection
@@ -24,6 +20,7 @@ Panels:
   - Class: rviz_common/Views
     Expanded:
       - /Current View1
+      - /Current View1/Focal Point1
     Name: Views
     Splitter Ratio: 0.5
   - Class: rviz_common/Time
@@ -60,24 +57,66 @@ Visualization Manager:
         base:
           Value: true
         base_weight:
-          Value: true
+          Value: false
         camera:
-          Value: true
+          Value: false
         imu:
+          Value: false
+        platform:
           Value: true
+        platform/odom:
+          Value: true
+        platform_weight:
+          Value: false
+        prop_bl:
+          Value: false
+        prop_br:
+          Value: false
+        prop_fl:
+          Value: false
+        prop_fr:
+          Value: false
+        prop_lb:
+          Value: false
+        prop_lt:
+          Value: false
+        prop_rb:
+          Value: false
+        prop_rt:
+          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        base:
-          base_weight:
-            {}
-          camera:
-            {}
-          imu:
-            {}
+        platform/odom:
+          platform:
+            base:
+              base_weight:
+                {}
+              camera:
+                {}
+              imu:
+                {}
+              prop_bl:
+                {}
+              prop_br:
+                {}
+              prop_fl:
+                {}
+              prop_fr:
+                {}
+              prop_lb:
+                {}
+              prop_lt:
+                {}
+              prop_rb:
+                {}
+              prop_rt:
+                {}
+            platform_weight:
+              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -116,12 +155,51 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+        platform:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        platform_weight:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         prop_bl:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
+        prop_br:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         prop_fl:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        prop_fr:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        prop_lb:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        prop_lt:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        prop_rb:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        prop_rt:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -152,17 +230,17 @@ Visualization Manager:
           Value: true
         Value: true
       Enabled: true
-      Keep: 100
+      Keep: 20
       Name: Odometry
       Position Tolerance: 0.10000000149011612
       Shape:
         Alpha: 1
         Axes Length: 1
         Axes Radius: 0.10000000149011612
-        Color: 255; 25; 0
-        Head Length: 0.30000001192092896
+        Color: 255; 255; 0
+        Head Length: 0.20000000298023224
         Head Radius: 0.10000000149011612
-        Shaft Length: 1
+        Shaft Length: 0.4000000059604645
         Shaft Radius: 0.05000000074505806
         Value: Arrow
       Topic:
@@ -171,7 +249,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /odom
+        Value: /platform/odom
       Value: true
     - Class: rviz_default_plugins/Image
       Enabled: true
@@ -190,8 +268,8 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base
-    Frame Rate: 30
+    Fixed Frame: platform/odom
+    Frame Rate: 10
   Name: root
   Tools:
     - Class: rviz_default_plugins/Interact
@@ -233,7 +311,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.3424800634384155
+      Distance: 5.132615566253662
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -248,10 +326,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7850000262260437
+      Pitch: 1.5697963237762451
       Target Frame: base
       Value: Orbit (rviz)
-      Yaw: 0.7850000262260437
+      Yaw: 3.140000104904175
     Saved:
       - Class: rviz_default_plugins/Orbit
         Distance: 1.2254868745803833

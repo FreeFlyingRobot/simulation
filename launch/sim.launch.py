@@ -48,7 +48,7 @@ def generate_launch_description():
     # Setup to launch the simulator and Gazebo world
     ld.add_action(DeclareLaunchArgument(
         WORLD_PARAM_NAME,
-        default_value='worlds/infinistand.sdf',
+        default_value='worlds/stand.sdf',
         description="Gazebo world SDF"
     ))
     ld.add_action(OpaqueFunction(
@@ -65,13 +65,6 @@ def generate_launch_description():
         ROBOT_NAME_PARAM_NAME,
         default_value=str(PLATFORM_MODEL_PATH),
         description="Robot model path"
-    ))
-    ld.add_action(OpaqueFunction(
-        function=generate_spawner,
-        args=[
-            LaunchConfiguration(ROBOT_Z_PARAM_NAME),
-            LaunchConfiguration(ROBOT_NAME_PARAM_NAME)
-        ],
     ))
 
     # Rviz
