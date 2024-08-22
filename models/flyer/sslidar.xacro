@@ -24,6 +24,11 @@
                 <min>0.03</min>
                 <max>0.3</max>
             </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.004</stddev>
+            </noise>
         </ray>
         <always_on>1</always_on>
         <visualize>true</visualize>
