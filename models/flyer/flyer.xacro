@@ -3,6 +3,7 @@
 
 <xacro:include filename="$(env MODELS_DIR)/common/utils.xacro" />
 <xacro:include filename="$(env MODELS_DIR)/flyer/propeller.xacro" />
+<xacro:include filename="$(env MODELS_DIR)/flyer/sslidar.xacro" />
 
 <link name="base">
     <visual name="base_visual">
@@ -89,6 +90,13 @@
     </sensor>
 </gazebo>
 <!-- END CAMERA BLOCK-->
+
+<!-- LIDAR BLOCK-->
+<xacro:sslidar name="front" xyz="${robot_side_len/2} 0 0" rpy="0 0 0"/>
+<xacro:sslidar name="back" xyz="${-robot_side_len/2} 0 0" rpy="0 0 ${pi}"/>
+<xacro:sslidar name="right" xyz="0 ${-robot_side_len/2} 0" rpy="0 0 ${-pi / 2}"/>
+<xacro:sslidar name="left" xyz="0 ${robot_side_len/2} 0" rpy="0 0 ${pi / 2}"/>
+<!-- END LIDAR BLOCk-->
 
 <gazebo>
     <plugin

@@ -4,7 +4,7 @@
 <xacro:include filename="$(env MODELS_DIR)/worlds/infinistand.xacro" />
 <world name="infinistand_world">
     <xacro:infinistand_world/>
-    <model name='platform'>
+    <model name='airstand'>
         <include>
              <uri>file:/$(env MODELS_DIR)/platform/full_platform.urdf</uri>
              <pose>0.0 0.0 0.3275 0.0 0 0.0</pose>

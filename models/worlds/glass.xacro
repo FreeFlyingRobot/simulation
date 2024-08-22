@@ -26,10 +26,9 @@
             </box>
         </geometry>
         <material>
-            <diffuse>1.0 1.0 1.0</diffuse>
             <script>
                 <uri>file://media/materials/scripts/gazebo.material</uri>
-                <name>Gazebo/White</name>
+                <name>Gazebo/Grey</name>
             </script>
         </material>
     </visual>
