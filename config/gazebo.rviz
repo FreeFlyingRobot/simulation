@@ -269,10 +269,10 @@ Visualization Manager:
         Axes Length: 1
         Axes Radius: 0.10000000149011612
         Color: 255; 255; 0
-        Head Length: 0.20000000298023224
+        Head Length: 0.10000000149011612
         Head Radius: 0.10000000149011612
         Shaft Length: 0.4000000059604645
-        Shaft Radius: 0.05000000074505806
+        Shaft Radius: 0.019999999552965164
         Value: Arrow
       Topic:
         Depth: 5
@@ -311,9 +311,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: true
       Max Color: 255; 255; 255
-      Max Intensity: -999999
+      Max Intensity: 1
       Min Color: 0; 0; 0
-      Min Intensity: 999999
+      Min Intensity: 1
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -345,9 +345,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: true
       Max Color: 255; 255; 255
-      Max Intensity: -999999
+      Max Intensity: 1
       Min Color: 0; 0; 0
-      Min Intensity: 999999
+      Min Intensity: 1
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -379,9 +379,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: true
       Max Color: 255; 255; 255
-      Max Intensity: 0
+      Max Intensity: 1
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 1
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -413,9 +413,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: true
       Max Color: 255; 255; 255
-      Max Intensity: -999999
+      Max Intensity: 1
       Min Color: 0; 0; 0
-      Min Intensity: 999999
+      Min Intensity: 1
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true

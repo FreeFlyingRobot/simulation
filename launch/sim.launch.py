@@ -8,7 +8,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-from simvis.common import SIM_DIR, PLATFORM_MODEL_PATH, ROBOT_MODEL_PATH, MODELS_DIR, RVIZ_CONFIG_PARAM_NAME, WORLD_PARAM_NAME, ROBOT_Z_PARAM_NAME, ROBOT_NAME_PARAM_NAME
+from simvis.common import SIM_DIR, PLATFORM_MODEL_PATH, MODELS_DIR, RVIZ_CONFIG_PARAM_NAME, WORLD_PARAM_NAME, ROBOT_NAME_PARAM_NAME
 
 
 pkg_simvis = Path(get_package_share_directory('simvis'))
@@ -48,7 +48,7 @@ def generate_launch_description():
     # Setup to launch the simulator and Gazebo world
     ld.add_action(DeclareLaunchArgument(
         WORLD_PARAM_NAME,
-        default_value='worlds/stand.sdf',
+        default_value='worlds/stand/stand.sdf',
         description="Gazebo world SDF"
     ))
     ld.add_action(OpaqueFunction(
@@ -56,11 +56,6 @@ def generate_launch_description():
         args=[LaunchConfiguration(WORLD_PARAM_NAME)],
     ))
 
-    ld.add_action(DeclareLaunchArgument(
-        ROBOT_Z_PARAM_NAME,
-        default_value='0.3275',
-        description="Robot spawn height"
-    ))
     ld.add_action(DeclareLaunchArgument(
         ROBOT_NAME_PARAM_NAME,
         default_value=str(PLATFORM_MODEL_PATH),

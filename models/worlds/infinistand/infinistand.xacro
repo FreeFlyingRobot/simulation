@@ -1,11 +1,10 @@
 <include xmlns:xacro="http://www.ros.org/wiki/xacro">
 <xacro:macro name="infinistand_world">
-<xacro:include filename="./plugins.xacro" />
-<xacro:include filename="$(env MODELS_DIR)/common/simple_light.xacro" />
-<xacro:include filename="$(env MODELS_DIR)/common/gui.xacro" />
-<xacro:include filename="$(env MODELS_DIR)/common/utils.xacro" />
 
-<xacro:include filename="./glass.xacro" />
+<xacro:include filename="$(env MODELS_DIR)/common/simple_light.xacro" />
+<xacro:include filename="$(env MODELS_DIR)/common/plugins.xacro" />
+
+<xacro:include filename="$(env MODELS_DIR)/objects/glass.xacro" />
 
 <model name="Glass">
     <static>true</static>

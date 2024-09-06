@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf xmlns:xacro="http://www.ros.org/wiki/xacro" version="1.10">
 
-<xacro:include filename="$(env MODELS_DIR)/worlds/infinistand.xacro" />
+<xacro:include filename="$(env MODELS_DIR)/worlds/infinistand/infinistand.xacro" />
 <world name="infinistand_world">
     <xacro:infinistand_world/>
 </world>

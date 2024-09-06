@@ -6,14 +6,13 @@ from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 WORLD_PARAM_NAME = "world"
-ROBOT_Z_PARAM_NAME = "robot_z"
 ROBOT_NAME_PARAM_NAME = "robot"
+RVIZ_CONFIG_PARAM_NAME = "rviz_config"
 
 SIM_DIR = Path(os.environ["SIM_DIR"])
 MODELS_DIR = Path(os.environ["MODELS_DIR"])
 PLATFORM_MODEL_PATH = MODELS_DIR / "platform" / "full_platform.urdf"
 ROBOT_MODEL_PATH = MODELS_DIR / "flyer" / "flyer.urdf"
-RVIZ_CONFIG_PARAM_NAME = "rviz_config"
 
 
 def get_robot_state_publisher_generator(kwargs=None):
