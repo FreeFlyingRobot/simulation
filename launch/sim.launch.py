@@ -65,14 +65,14 @@ def generate_launch_description():
     # Rviz
     ld.add_action(DeclareLaunchArgument('rviz', default_value='true', description='Open RViz'))
     ld.add_action(IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(str(pkg_simvis / 'launch' / 'simple_rviz.launch.py')),
+        PythonLaunchDescriptionSource(str(pkg_simvis / 'launch' / 'rviz.launch.py')),
         launch_arguments={RVIZ_CONFIG_PARAM_NAME: str(SIM_DIR / "config" / "gazebo.rviz")}.items(),
         condition=IfCondition(LaunchConfiguration('rviz'))
     ))
 
     # Robot state publisher
     ld.add_action(IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(str(pkg_simvis / 'launch' / 'rsp_model.launch.py'))
+        PythonLaunchDescriptionSource(str(pkg_simvis / 'launch' / 'rsp.launch.py'))
     ))
 
     # Bridge ROS topics and Gazebo messages for establishing communication
