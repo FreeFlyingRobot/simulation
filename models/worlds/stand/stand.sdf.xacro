@@ -1,16 +1,23 @@
 <?xml version="1.0" ?>
 <sdf xmlns:xacro="http://www.ros.org/wiki/xacro" version="1.10">
-
-<xacro:include filename="$(env MODELS_DIR)/worlds/infinistand/infinistand.xacro" />
-
 <world name="infinistand_world">
-    <xacro:infinistand_world/>
-    <model name='airstand'>
-        <include>
-             <uri>file:/$(env MODELS_DIR)/platform/full_platform.urdf</uri>
-             <pose>0.0 0.0 0.3275 0.0 0 0.0</pose>
-        </include>
-    </model>
-</world>
 
+<xacro:include filename="$(env MODELS_DIR)/common/simple_light.xacro" />
+<xacro:include filename="$(env MODELS_DIR)/common/plugins.xacro" />
+
+<xacro:include filename="$(env MODELS_DIR)/objects/glass.xacro" />
+
+<model name="Glass">
+    <static>true</static>
+    <xacro:glass_plate z="-0.01" w="100" l="100" thickness="0.02"/>
+</model>
+
+<model name='airstand'>
+    <include>
+            <uri>file:/$(env MODELS_DIR)/objects/platform/full_platform.urdf</uri>
+            <pose>0.0 0.0 0.3275 0.0 0 0.0</pose>
+    </include>
+</model>
+
+</world>
 </sdf>
