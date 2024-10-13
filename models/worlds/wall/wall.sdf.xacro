@@ -6,17 +6,12 @@
 <xacro:include filename="$(env MODELS_DIR)/common/plugins.xacro" />
 <xacro:include filename="$(env MODELS_DIR)/common/consts.xacro" />
 
-<xacro:include filename="$(env MODELS_DIR)/objects/glass.xacro" />
+<gravity>0 0 0</gravity>
 
-<model name="Glass">
-    <static>true</static>
-    <xacro:glass_plate z="-0.01" w="100" l="100" thickness="0.02"/>
-</model>
-
-<model name='airstand'>
+<model name='flyer'>
     <include>
-        <uri>file:/$(env MODELS_DIR)/objects/platform/full_platform.urdf</uri>
-        <pose>0.0 0.0 ${robot_side_len/2 + base_height/2} 0.0 0 0.0</pose>
+            <uri>file:/$(env MODELS_DIR)/flyer/flyer.urdf</uri>
+            <pose>0.0 0.0 ${robot_side_len/2} 0.0 0 0.0</pose>
     </include>
 </model>
 

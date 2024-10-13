@@ -6,9 +6,11 @@
 <xacro:include filename="$(env MODELS_DIR)/flyer/propeller.xacro" />
 <xacro:include filename="$(env MODELS_DIR)/flyer/sslidar.xacro" />
 
+<xacro:property name="side_offset" value="0.07" />
+
 <link name="base">
     <visual name="base_visual">
-        <origin  xyz="0 ${robot_side_len/2 - 0.01} 0" rpy="0 0 ${pi / 2}"/>
+        <origin  xyz="0 ${robot_side_len/2 - 0.02} 0" rpy="0 0 ${pi / 2}"/>
         <geometry>
             <mesh filename="file:///$(env MODELS_DIR)/flyer/robot.stl" scale="0.001 0.001 0.001"/>
         </geometry>
@@ -64,7 +66,7 @@
 <joint name="camera_joint" type="fixed">
     <parent link="base"/>
     <child link="camera"/>
-    <origin xyz="0 0 ${robot_side_len/2}"/>
+    <origin xyz="${robot_side_len/2 + 0.005} 0 ${side_offset}"/>
 </joint>
 <gazebo reference="camera">
     <sensor name="camera" type="camera">
@@ -107,21 +109,31 @@
         <joint_name>prop_rb_joint</joint_name>
         <joint_name>prop_lt_joint</joint_name>
         <joint_name>prop_lb_joint</joint_name>
+        <joint_name>prop_ul_joint</joint_name>
+        <joint_name>prop_ur_joint</joint_name>
+        <joint_name>prop_dl_joint</joint_name>
+        <joint_name>prop_dr_joint</joint_name>
   </plugin>
 </gazebo>
 
-<xacro:property name="side_offset" value="0.074" />
-<xacro:propeller name="prop_fl" xyz="0.1 ${side_offset} 0.015" rpy="0 0 ${pi}"/>
-<xacro:propeller name="prop_fr" xyz="0.1 ${-side_offset} 0.015" rpy="0 0 ${pi}"/>
 
-<xacro:propeller name="prop_bl" xyz="-0.1 ${side_offset} 0.015" rpy="0 0 0"/>
-<xacro:propeller name="prop_br" xyz="-0.1 ${-side_offset} 0.015" rpy="0 0 0"/>
+<xacro:propeller name="prop_fl" xyz="${robot_side_len/2} ${side_offset} ${side_offset}" rpy="0 0 ${pi}"/>
+<xacro:propeller name="prop_fr" xyz="${robot_side_len/2} ${-side_offset} ${-side_offset}" rpy="0 0 ${pi}"/>
 
-<xacro:propeller name="prop_rt" xyz="0.04 -0.1 ${side_offset}" rpy="0 0 ${pi/2}"/>
-<xacro:propeller name="prop_rb" xyz="-0.04 -0.1 ${-side_offset}" rpy="0 0 ${pi/2}"/>
+<xacro:propeller name="prop_bl" xyz="${-robot_side_len/2} ${side_offset} ${-side_offset}" rpy="0 0 0"/>
+<xacro:propeller name="prop_br" xyz="${-robot_side_len/2} ${-side_offset} ${side_offset}" rpy="0 0 0"/>
 
-<xacro:propeller name="prop_lt" xyz="-0.04 0.1 ${side_offset}" rpy="0 0 ${-pi/2}"/>
-<xacro:propeller name="prop_lb" xyz="0.04 0.1 ${-side_offset}" rpy="0 0 ${-pi/2}"/>
+<xacro:propeller name="prop_rt" xyz="${side_offset} ${-robot_side_len/2} ${side_offset}" rpy="0 0 ${pi/2}"/>
+<xacro:propeller name="prop_rb" xyz="${-side_offset} ${-robot_side_len/2} ${-side_offset}" rpy="0 0 ${pi/2}"/>
+
+<xacro:propeller name="prop_lt" xyz="${-side_offset} ${robot_side_len/2} ${side_offset}" rpy="0 0 ${-pi/2}"/>
+<xacro:propeller name="prop_lb" xyz="${side_offset} ${robot_side_len/2} ${-side_offset}" rpy="0 0 ${-pi/2}"/>
+
+<xacro:propeller name="prop_ul" xyz="${-side_offset} ${side_offset} ${robot_side_len/2}" rpy="0 ${pi/2} 0"/>
+<xacro:propeller name="prop_ur" xyz="${side_offset} ${-side_offset} ${robot_side_len/2}" rpy="0 ${pi/2} 0"/>
+
+<xacro:propeller name="prop_dl" xyz="${side_offset} ${side_offset} ${-robot_side_len/2}" rpy="0 ${-pi/2} 0"/>
+<xacro:propeller name="prop_dr" xyz="${-side_offset} ${-side_offset} ${-robot_side_len/2}" rpy="0 ${-pi/2} 0"/>
 
 </xacro:macro>
 </include>

@@ -61,7 +61,7 @@ Visualization Manager:
         base_weight:
           Value: false
         camera:
-          Value: false
+          Value: true
         imu:
           Value: true
         lidar_bl:
@@ -82,6 +82,10 @@ Visualization Manager:
           Value: false
         prop_br:
           Value: false
+        prop_dl:
+          Value: false
+        prop_dr:
+          Value: false
         prop_fl:
           Value: false
         prop_fr:
@@ -93,6 +97,10 @@ Visualization Manager:
         prop_rb:
           Value: false
         prop_rt:
+          Value: false
+        prop_ul:
+          Value: false
+        prop_ur:
           Value: false
       Marker Scale: 1
       Name: TF
@@ -121,6 +129,10 @@ Visualization Manager:
                 {}
               prop_br:
                 {}
+              prop_dl:
+                {}
+              prop_dr:
+                {}
               prop_fl:
                 {}
               prop_fr:
@@ -132,6 +144,10 @@ Visualization Manager:
               prop_rb:
                 {}
               prop_rt:
+                {}
+              prop_ul:
+                {}
+              prop_ur:
                 {}
             platform_weight:
               {}
@@ -208,6 +224,16 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        prop_dl:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        prop_dr:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         prop_fl:
           Alpha: 1
           Show Axes: false
@@ -234,6 +260,16 @@ Visualization Manager:
           Show Trail: false
           Value: true
         prop_rt:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        prop_ul:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        prop_ur:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -314,9 +350,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: true
       Max Color: 255; 255; 255
-      Max Intensity: -999999
+      Max Intensity: 1
       Min Color: 0; 0; 0
-      Min Intensity: 999999
+      Min Intensity: 1
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -348,9 +384,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: true
       Max Color: 255; 255; 255
-      Max Intensity: -999999
+      Max Intensity: 1
       Min Color: 0; 0; 0
-      Min Intensity: 999999
+      Min Intensity: 1
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -382,9 +418,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: true
       Max Color: 255; 255; 255
-      Max Intensity: -999999
+      Max Intensity: 1
       Min Color: 0; 0; 0
-      Min Intensity: 999999
+      Min Intensity: 1
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -416,9 +452,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: true
       Max Color: 255; 255; 255
-      Max Intensity: -999999
+      Max Intensity: 1
       Min Color: 0; 0; 0
-      Min Intensity: 999999
+      Min Intensity: 1
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
