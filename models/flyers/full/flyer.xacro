@@ -62,6 +62,20 @@
 </gazebo>
 <!-- END IMU BLOCK-->
 
+<!-- ODOM BLOCK-->
+<gazebo>
+    <plugin
+        filename="gz-sim-odometry-publisher-system"
+        name="gz::sim::systems::OdometryPublisher">
+        <odom_frame>/ground-truth/odom</odom_frame>
+        <robot_base_frame>base</robot_base_frame>
+        <odom_publish_frequency>20</odom_publish_frequency>
+        <odom_topic>/ground-truth/odom</odom_topic>
+        <tf_topic>tf</tf_topic>
+  </plugin>
+</gazebo>
+<!-- END ODOM BLOCK-->
+
 <!-- CAMERA BLOCK-->
 <link name="camera"></link>
 <joint name="camera_joint" type="fixed">

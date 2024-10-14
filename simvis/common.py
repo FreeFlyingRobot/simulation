@@ -9,7 +9,7 @@ from launch_ros.actions import Node
 
 SIM_TYPE_PARAM_NAME = "type"
 RVIZ_CONFIG_PARAM_NAME = "rviz"
-ROBOT_NAME_PARAM_NAME = "robot "
+ROBOT_NAME_PARAM_NAME = "robot"
 
 SIM_DIR = Path(os.environ["SIM_DIR"])
 MODELS_DIR = Path(os.environ["MODELS_DIR"])
