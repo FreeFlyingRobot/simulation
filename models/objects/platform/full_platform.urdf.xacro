@@ -2,16 +2,16 @@
 <robot name="airstand" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:include filename="$(env MODELS_DIR)/common/consts.xacro" />
-<xacro:include filename="$(env MODELS_DIR)/flyer/flyer.xacro" />
+<xacro:include filename="$(env MODELS_DIR)/flyers/proto/proto.xacro" />
 <xacro:include filename="./platform.xacro" />
 
 <xacro:platform/>
-<xacro:flyer/>
+<xacro:proto/>
 
-<joint name="platform_flyer_joint" type="fixed">
+<joint name="platform_proto_joint" type="fixed">
     <parent link="platform"/>
     <child link="base"/>
-    <origin xyz="0 0 ${robot_side_len/2 + base_height/2}"/>
+    <origin xyz="0 0 ${robot_side_len_proto/2 + base_height/2}"/>
 </joint>
 
 </robot>

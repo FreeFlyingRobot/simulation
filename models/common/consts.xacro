@@ -1,6 +1,7 @@
 <include xmlns:xacro="http://www.ros.org/wiki/xacro">
 
 <xacro:property name="base_height" value="0.655" />
-<xacro:property name="robot_side_len" value="0.24" />
+<xacro:property name="robot_side_len_full" value="0.24" />
+<xacro:property name="robot_side_len_proto" value="0.24" />
 
 </include>

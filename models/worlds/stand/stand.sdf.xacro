@@ -16,7 +16,7 @@
 <model name='airstand'>
     <include>
         <uri>file:/$(env MODELS_DIR)/objects/platform/full_platform.urdf</uri>
-        <pose>0.0 0.0 ${robot_side_len/2 + base_height/2} 0.0 0 0.0</pose>
+        <pose>0.0 0.0 ${base_height/2 + 0.01} 0.0 0 0.0</pose>
     </include>
 </model>
 

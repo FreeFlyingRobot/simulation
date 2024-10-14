@@ -3,16 +3,17 @@
 
 <xacro:include filename="$(env MODELS_DIR)/common/utils.xacro" />
 <xacro:include filename="$(env MODELS_DIR)/common/consts.xacro" />
-<xacro:include filename="$(env MODELS_DIR)/flyer/propeller.xacro" />
-<xacro:include filename="$(env MODELS_DIR)/flyer/sslidar.xacro" />
+<xacro:include filename="$(env MODELS_DIR)/flyers/propeller.xacro" />
+<xacro:include filename="$(env MODELS_DIR)/flyers/sslidar.xacro" />
 
+<xacro:property name="robot_side_len" value="${robot_side_len_full}" />
 <xacro:property name="side_offset" value="0.07" />
 
 <link name="base">
     <visual name="base_visual">
         <origin  xyz="0 ${robot_side_len/2 - 0.02} 0" rpy="0 0 ${pi / 2}"/>
         <geometry>
-            <mesh filename="file:///$(env MODELS_DIR)/flyer/robot.stl" scale="0.001 0.001 0.001"/>
+            <mesh filename="file:///$(env MODELS_DIR)/flyers/full/robot.stl" scale="0.001 0.001 0.001"/>
         </geometry>
         <material name="blue">
             <color rgba="0 0 0.7 1.0"/>
@@ -115,7 +116,6 @@
         <joint_name>prop_dr_joint</joint_name>
   </plugin>
 </gazebo>
-
 
 <xacro:propeller name="prop_fl" xyz="${robot_side_len/2} ${side_offset} ${side_offset}" rpy="0 0 ${pi}"/>
 <xacro:propeller name="prop_fr" xyz="${robot_side_len/2} ${-side_offset} ${-side_offset}" rpy="0 0 ${pi}"/>

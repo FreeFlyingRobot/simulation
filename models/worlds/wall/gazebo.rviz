@@ -4,6 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Status1
         - /TF1/Frames1
         - /RobotModel1/Description Topic1
         - /Odometry1/Shape1
@@ -27,7 +28,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -72,12 +73,6 @@ Visualization Manager:
           Value: false
         lidar_fr:
           Value: false
-        platform:
-          Value: false
-        platform/odom:
-          Value: true
-        platform_weight:
-          Value: false
         prop_bl:
           Value: false
         prop_br:
@@ -108,49 +103,45 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        platform/odom:
-          platform:
-            base:
-              base_weight:
-                {}
-              camera:
-                {}
-              imu:
-                {}
-              lidar_bl:
-                {}
-              lidar_br:
-                {}
-              lidar_fl:
-                {}
-              lidar_fr:
-                {}
-              prop_bl:
-                {}
-              prop_br:
-                {}
-              prop_dl:
-                {}
-              prop_dr:
-                {}
-              prop_fl:
-                {}
-              prop_fr:
-                {}
-              prop_lb:
-                {}
-              prop_lt:
-                {}
-              prop_rb:
-                {}
-              prop_rt:
-                {}
-              prop_ul:
-                {}
-              prop_ur:
-                {}
-            platform_weight:
-              {}
+        base:
+          base_weight:
+            {}
+          camera:
+            {}
+          imu:
+            {}
+          lidar_bl:
+            {}
+          lidar_br:
+            {}
+          lidar_fl:
+            {}
+          lidar_fr:
+            {}
+          prop_bl:
+            {}
+          prop_br:
+            {}
+          prop_dl:
+            {}
+          prop_dr:
+            {}
+          prop_fl:
+            {}
+          prop_fr:
+            {}
+          prop_lb:
+            {}
+          prop_lt:
+            {}
+          prop_rb:
+            {}
+          prop_rt:
+            {}
+          prop_ul:
+            {}
+          prop_ur:
+            {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -202,15 +193,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
         lidar_fr:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        platform:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        platform_weight:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -474,7 +456,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: platform/odom
+    Fixed Frame: base
     Frame Rate: 10
   Name: root
   Tools:
@@ -575,5 +557,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 614
-  X: 920
+  X: 1176
   Y: 25

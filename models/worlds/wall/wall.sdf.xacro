@@ -10,8 +10,8 @@
 
 <model name='flyer'>
     <include>
-            <uri>file:/$(env MODELS_DIR)/flyer/flyer.urdf</uri>
-            <pose>0.0 0.0 ${robot_side_len/2} 0.0 0 0.0</pose>
+            <uri>file:/$(env MODELS_DIR)/flyers/full/flyer.urdf</uri>
+            <pose>0.0 0.0 ${robot_side_len_full/2} 0.0 0 0.0</pose>
     </include>
 </model>
 

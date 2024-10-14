@@ -2,7 +2,7 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, OpaqueFunction
 from launch.substitutions import LaunchConfiguration
 
-from simvis.common import ROBOT_NAME_PARAM_NAME, ROBOT_MODEL_PATH, get_robot_state_publisher_generator
+from simvis.common import ROBOT_NAME_PARAM_NAME, get_robot_state_publisher_generator
 
 
 def generate_launch_description():
@@ -11,7 +11,6 @@ def generate_launch_description():
     ld.add_action(
         DeclareLaunchArgument(
             name=ROBOT_NAME_PARAM_NAME,
-            default_value=str(ROBOT_MODEL_PATH),
             description="Absolute path to urdf model",
         )
     )
