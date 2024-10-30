@@ -4,8 +4,10 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
         - /TF1/Frames1
         - /RobotModel1/Description Topic1
+        - /Odometry1
         - /Odometry1/Shape1
       Splitter Ratio: 0.3719008266925812
     Tree Height: 315
@@ -27,7 +29,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: LaserScan
+    SyncSource: ""
 Visualization Manager:
   Class: ""
   Displays:
@@ -62,8 +64,6 @@ Visualization Manager:
           Value: false
         camera:
           Value: true
-        ground-truth/odom:
-          Value: true
         imu:
           Value: true
         lidar_bl:
@@ -74,77 +74,13 @@ Visualization Manager:
           Value: false
         lidar_fr:
           Value: false
-        prop_bl:
-          Value: false
-        prop_br:
-          Value: false
-        prop_dl:
-          Value: false
-        prop_dr:
-          Value: false
-        prop_fl:
-          Value: false
-        prop_fr:
-          Value: false
-        prop_lb:
-          Value: false
-        prop_lt:
-          Value: false
-        prop_rb:
-          Value: false
-        prop_rt:
-          Value: false
-        prop_ul:
-          Value: false
-        prop_ur:
-          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: false
       Tree:
-        base:
-          base_weight:
-            {}
-          camera:
-            {}
-          imu:
-            {}
-          lidar_bl:
-            {}
-          lidar_br:
-            {}
-          lidar_fl:
-            {}
-          lidar_fr:
-            {}
-          prop_bl:
-            {}
-          prop_br:
-            {}
-          prop_dl:
-            {}
-          prop_dr:
-            {}
-          prop_fl:
-            {}
-          prop_fr:
-            {}
-          prop_lb:
-            {}
-          prop_lt:
-            {}
-          prop_rb:
-            {}
-          prop_rt:
-            {}
-          prop_ul:
-            {}
-          prop_ur:
-            {}
-        ground-truth/odom:
-          {}
+        {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -304,7 +240,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /platform/odom
+        Value: /ground_truth/odom
       Value: true
     - Class: rviz_default_plugins/Image
       Enabled: true
@@ -459,7 +395,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: ground-truth/odom
+    Fixed Frame: ground_truth/odom
     Frame Rate: 10
   Name: root
   Tools:
@@ -517,10 +453,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7297968864440918
+      Pitch: -0.010202953591942787
       Target Frame: base
       Value: Orbit (rviz)
-      Yaw: 1.854997158050537
+      Yaw: 1.5799974203109741
     Saved:
       - Class: rviz_default_plugins/Orbit
         Distance: 1.2254868745803833
