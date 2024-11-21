@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf xmlns:xacro="http://www.ros.org/wiki/xacro" version="1.10">
-<world name="infinistand_world">
+<world name="walls_world">
 
 <xacro:include filename="$(env MODELS_DIR)/common/simple_light.xacro" />
 <xacro:include filename="$(env MODELS_DIR)/common/plugins.xacro" />
@@ -11,7 +11,14 @@
 <model name='flyer'>
     <include>
             <uri>file:/$(env MODELS_DIR)/flyers/full/flyer.urdf</uri>
-            <pose>0.0 0.0 ${robot_side_len_full/2} 0.0 0 0.0</pose>
+            <pose>0 0 ${robot_side_len_full/2} 0 0 0</pose>
+    </include>
+</model>
+
+<model name='wall'>
+    <include>
+            <uri>file:/$(env MODELS_DIR)/objects/wall/100-panels</uri>
+            <pose>1 0 0 0 0 0</pose>
     </include>
 </model>
 
