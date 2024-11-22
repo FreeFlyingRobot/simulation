@@ -15,10 +15,23 @@
     </include>
 </model>
 
-<model name='wall'>
+<model name='floor'>
+    <pose>1 0 2 0 ${pi / 2} ${pi}</pose>
     <include>
-            <uri>file:/$(env MODELS_DIR)/objects/wall/100-panels</uri>
-            <pose>1 0 0 0 0 0</pose>
+        <uri>file:/$(env MODELS_DIR)/objects/wall/100-panels/105</uri>
+        <pose>0 0 0 0 0 0</pose>
+    </include>
+    <include>
+        <uri>file:/$(env MODELS_DIR)/objects/wall/100-panels/106</uri>
+        <pose>0.503 0 0 0 0 0</pose>
+    </include>
+    <include>
+        <uri>file:/$(env MODELS_DIR)/objects/wall/100-panels/107</uri>
+        <pose>1.073 0 0 0 0 0</pose>
+    </include>
+    <include>
+        <uri>file:/$(env MODELS_DIR)/objects/wall/100-panels/108</uri>
+        <pose>1.723 0 0 0 0 0</pose>
     </include>
 </model>
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf xmlns:xacro="http://www.ros.org/wiki/xacro" version="1.10">
+
+<xacro:property name="panel_name" value="panel_108"/>
+
+<model name="${panel_name}">
+<pose>0 0 0 0 0 0</pose>
+<static>true</static>
+
+<xacro:include filename="$(env MODELS_DIR)/objects/wall/panel_utils.xacro" />
+
+<xacro:panel name="${panel_name}" size="1 1 1" model_ref_wall="100-panels/108/108.stl">
+    <material>
+        <ambient>0 0.3 0 1</ambient>
+        <diffuse>0 0.4 0 1</diffuse>
+        <specular>0.3 0.6 0.3 1</specular>
+    </material>
+</xacro:panel>
+
+<xacro:lock name="lock_1" pose="0.053 -0.434 0.0197 0 0  1.57" reference="${panel_name}"/>
+<xacro:lock name="lock_2" pose="0.053  0.434 0.0197 0 0  1.57" reference="${panel_name}"/>
+<xacro:lock name="lock_3" pose="0.497 -0.434 0.0197 0 0 -1.57" reference="${panel_name}"/>
+<xacro:lock name="lock_4" pose="0.497  0.434 0.0197 0 0 -1.57" reference="${panel_name}"/>
+<xacro:locker name="locker_1" pose="0.0985 -0.250 0.0197 0 0 -3.14" reference="${panel_name}"/>
+<xacro:locker name="locker_2" pose="0.0985  0.250 0.0197 0 0 -3.14" reference="${panel_name}"/>
+<xacro:locker name="locker_3" pose="0.4515 -0.250 0.0197 0 0  -3.14" reference="${panel_name}"/>
+<xacro:locker name="locker_4" pose="0.4515  0.250 0.0197 0 0  -3.14" reference="${panel_name}"/>
+
+<xacro:shield50x80
+    pose="0.05 0 0.0198 0 0 1.57"
+    reference="${panel_name}"
+    img_ref_wall="100-panels/108/108-50x80.png"
+/>
+
+</model>
+</sdf>

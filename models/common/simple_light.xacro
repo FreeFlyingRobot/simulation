@@ -11,7 +11,7 @@
         <linear>0.01</linear>
         <quadratic>0.001</quadratic>
     </attenuation>
-    <direction>-0.5 0.1 -0.9</direction>
+    <direction>1 0 -1</direction>
 </light>
 
 <scene>
