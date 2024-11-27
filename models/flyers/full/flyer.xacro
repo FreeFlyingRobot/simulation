@@ -30,6 +30,7 @@
 
 <link name="base_weight">
     <xacro:cuboid_inertia weight="2" a="${robot_side_len}" b="${robot_side_len}" c="${robot_side_len}" />
+    <!--
     <visual name="base_visual">
         <geometry>
             <sphere radius="${robot_side_len/2 + 0.03}"/>
@@ -38,6 +39,7 @@
             </material>
         </geometry>
     </visual>
+    -->
 </link>
 
 <joint name="base_weight_joint" type="fixed">
@@ -89,8 +91,8 @@
         <camera>
             <horizontal_fov>1.047</horizontal_fov>
             <image>
-                <width>320</width>
-                <height>240</height>
+                <width>640</width>
+                <height>480</height>
             </image>
             <clip>
                 <near>0.1</near>

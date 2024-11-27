@@ -16,7 +16,32 @@
 </model>
 
 <model name='floor'>
+    <static>true</static>
     <pose>1 0 2 0 ${pi / 2} ${pi}</pose>
+    <link name="backpanel">
+        <pose>0 0 -0.1 0 0 0</pose>
+        <self_collide>false</self_collide>
+        <visual name="backpanel_visual">
+            <geometry>
+                <box>
+                    <size>7 2 0.2</size>
+                </box>
+            </geometry>
+            <material>
+                <script>
+                    <uri>file://media/materials/scripts/gazebo.material</uri>
+                    <name>Gazebo/Grey</name>
+                </script>
+            </material>
+        </visual>
+        <collision name="backpanel_collision">
+            <geometry>
+                <box>
+                    <size>7 2 0.2</size>
+                </box>
+            </geometry>
+        </collision>
+    </link>
     <include>
         <uri>file:/$(env MODELS_DIR)/objects/wall/100-panels/105</uri>
         <pose>0 0 0 0 0 0</pose>
